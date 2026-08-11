@@ -1,0 +1,47 @@
+stack = []
+
+size = int(input("Enter the size of the stack: "))
+
+while True:
+    print("\n1. Push")
+    print("2. Pop")
+    print("3. Peek")
+    print("4. Display")
+    print("5. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        if len(stack) == size:
+            print("Stack Overflow")
+        else:
+            item = input("Enter book title: ")
+            stack.append(item)
+            print(item, "Inserted into stack")
+
+    elif choice == 2:
+        if len(stack) == 0:
+            print("Stack Underflow")
+        else:
+            print("Deleted item:", stack.pop())
+
+    elif choice == 3:
+        if len(stack) == 0:
+            print("Stack is Empty")
+        else:
+            print("Top element:", stack[-1])
+
+    elif choice == 4:
+        if len(stack) == 0:
+            print("Stack is Empty")
+        else:
+            print("Stack Elements:")
+            for i in range(len(stack) - 1, -1, -1):
+                print(stack[i])
+
+    elif choice == 5:
+        print("Program Ended")
+        break
+
+    else:
+        print("Invalid Choice")
