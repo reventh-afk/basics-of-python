@@ -1,0 +1,6 @@
+from itertools import combination
+list[1,2,3]
+print("Positive combinations")
+for i in range(1,len(list)+1):
+    for j in combination(list,i):
+            print(j)
